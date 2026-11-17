@@ -23,6 +23,7 @@ html {
 
 body {
     font-family: "Open Sans", sans-serif;
+    background-color: black;
 }
 
 ul {
@@ -61,3 +62,108 @@ ul {
 }
 
 /* End Global Rules  */
+
+/* Start Header */
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 99.2px;
+}
+
+header .container::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 1px;
+    bottom: 0;
+    left: 15px;
+    background-color: #ccc;
+}
+
+header .container img {
+    height: 40px;
+}
+
+header .container nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .container ul {
+    display: flex;
+}
+
+header .container ul li .active {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+header .container ul li a:not(.active):hover {
+    color: var(--main-color);
+    border-bottom-color: var(--main-color);
+}
+
+header .container ul li a {
+    display: block;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 40px 15px;
+    position: relative;
+    z-index: 2;
+    border-bottom: 1px solid #ccc;
+    transition: all 0.5s ease 0.1s;
+}
+
+header .container .icon {
+    color: white;
+    border-left: 1px solid white;
+    padding: 10px 10px 10px 30px;
+}
+
+header .container nav i {
+    color: white;
+    display: none;
+}
+
+header .container nav i:hover+ul {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    flex-flow: column;
+    width: 100%;
+    text-align: center;
+    left: 0;
+}
+
+@media (max-width : 767px) {
+    header .container::before {
+        width: 100%;
+        left: 0;
+    }
+
+    header .container ul {
+        display: none;
+    }
+
+    header .container nav i {
+        display: block;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    header .container ul li a {
+        padding: 20px 15px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* End Header */
