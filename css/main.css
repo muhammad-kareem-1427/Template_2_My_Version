@@ -145,6 +145,7 @@ header .container nav i:hover+ul {
     width: 100%;
     text-align: center;
     left: 0;
+    background-color: rgb(0 0 0 / 70%);
 }
 
 @media (max-width : 767px) {
@@ -245,27 +246,51 @@ header .container nav i:hover+ul {
 .landing .landing-text {
     position: absolute;
     background-color: var(--secondary-color);
-    width: 60%;
+    width: 50%;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
     z-index: 0;
-    padding: 50px 50px 50px 300px;
+    padding: 50px;
     color: white;
+    display: flex;
+    justify-content: right;
 }
 
-.landing .landing-text h2 {
+
+.landing .landing-text .landing-text-content {
+    max-width: 500px;
+}
+
+.landing .landing-text .landing-text-content h2 {
     font-size: 26px;
     font-weight: 400;
     line-height: 2;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
-.landing .landing-text p {
+.landing .landing-text .landing-text-content p {
     line-height: 2;
     font-size: 15px;
-    margin-bottom: 20px;
+}
+
+@media (max-width : 767px) {
+    .landing .landing-text {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .landing::after,
+    .landing::before {
+        display: none;
+    }
+
+    .landing .landing-text .landing-text-content h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
 }
 
 /* End Landing */
