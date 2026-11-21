@@ -1,0 +1,49 @@
+/* Start Component */
+
+.heading-component {
+    text-align: center;
+    width: 450px;
+    margin: 0 auto 100px;
+    max-width: 100%;
+}
+
+.heading-component>h2 {
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.heading-component>h2::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+}
+
+.heading-component>h2::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+}
+
+.heading-component>p {
+    margin-top: 50px;
+    color: var(--main-pcolor);
+    line-height: 2;
+}
+
+/* End Component */
