@@ -304,4 +304,48 @@ header .container nav i:hover+ul {
 
 .services .container {}
 
+.services .container .services-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.services .container .services-content .box {
+    flex-basis: 22%;
+    text-align: center;
+}
+
+@media (max-width : 991px) {
+    .services .container .services-content .box {
+        flex-basis: 40%;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width : 767px) {
+    .services .container .services-content .box {
+        flex-basis: 100%;
+        margin-bottom: 100px;
+    }
+}
+
+.services .container .services-content .box .box-text {}
+
+.services .container .services-content .box i {
+    margin-bottom: 35px;
+    font-size: 36px;
+}
+
+.services .container .services-content .box h2 {
+    color: var(--main-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.services .container .services-content .box p {
+    line-height: 2;
+    color: var(--main-pcolor);
+}
+
+
 /* End Services */
