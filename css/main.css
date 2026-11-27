@@ -4,6 +4,7 @@
     --secondary-color: rgb(15 116 143 / 70%);
     --main-pcolor: #777;
     --main-padding: 100px;
+    --main-Font-Weight: 500;
 }
 
 /* End Global Variables */
@@ -27,6 +28,11 @@ body {
 
 ul {
     list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .container {
@@ -116,7 +122,7 @@ header .container ul li a:not(.active):hover {
 header .container ul li a {
     display: block;
     color: white;
-    font-weight: 600;
+    font-weight: var(--main-Font-Weight);
     text-decoration: none;
     text-transform: uppercase;
     padding: 40px 15px;
@@ -264,7 +270,7 @@ header .container nav i:hover+ul {
 
 .landing .landing-text .landing-text-content h2 {
     font-size: 26px;
-    font-weight: 400;
+    font-weight: var(--main-Font-Weight);
     line-height: 2;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -302,8 +308,6 @@ header .container nav i:hover+ul {
     padding-bottom: var(--main-padding);
 }
 
-.services .container {}
-
 .services .container .services-content {
     display: flex;
     flex-wrap: wrap;
@@ -329,8 +333,6 @@ header .container nav i:hover+ul {
     }
 }
 
-.services .container .services-content .box .box-text {}
-
 .services .container .services-content .box i {
     margin-bottom: 35px;
     font-size: 36px;
@@ -338,7 +340,7 @@ header .container nav i:hover+ul {
 
 .services .container .services-content .box h2 {
     color: var(--main-color);
-    font-weight: 500;
+    font-weight: var(--main-Font-Weight);
     margin-bottom: 20px;
 }
 
@@ -349,3 +351,276 @@ header .container nav i:hover+ul {
 
 
 /* End Services */
+
+/* Start Design */
+.design {
+    position: relative;
+    background-image: url(../images/jack-cohen-7m-Dt6NwCnI-unsplash.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.design::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 /50%);
+    height: 100%;
+    width: 100%;
+}
+
+.design .image img {
+    background-size: cover;
+    width: 320px;
+    height: 240px;
+    position: absolute;
+    bottom: -20px;
+    left: 15%;
+    border-radius: 10%;
+}
+
+@media (max-width : 991px) {
+    .design .image img {
+        left: 5%;
+    }
+}
+
+
+
+.design .box {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 50px;
+    width: 50%;
+    max-width: 100%;
+}
+
+@media (max-width : 767px) {
+    .design .image img {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 280px;
+    }
+
+    .design .box {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 30%;
+        width: 100%;
+    }
+
+    .design .box h2,
+    .design .box ul {
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+
+
+.design .box h2 {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: var(--main-Font-Weight);
+}
+
+
+
+.design .box li {
+    padding: 10px;
+}
+
+.design .box li::before {
+    content: "\f26c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+    margin-right: 15px;
+    font-size: 26px;
+    vertical-align: middle;
+}
+
+
+/* End Design */
+
+/* Start Portfolio */
+
+.portfolio {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.portfolio .toggle-menu {
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    margin: 0 auto 100px;
+}
+
+.portfolio .toggle-menu li {
+    padding: 10px 20px;
+    transition: all 0.5s ease 0s;
+}
+
+.portfolio .toggle-menu li:hover,
+.portfolio .toggle-menu li.active {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.portfolio .toggle-menu li:not(:first-child, :last-child, :nth-child(3)) {
+    margin: 0 15px;
+}
+
+@media (max-width : 767px) {
+    .portfolio .toggle-menu {
+        flex-flow: wrap;
+    }
+
+    .portfolio .toggle-menu li {
+        flex-basis: 45%;
+    }
+
+
+    .portfolio .toggle-menu li.active {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .portfolio .toggle-menu li:not(:first-child, :last-child, :nth-child(3)) {
+        margin: 0;
+    }
+
+    .portfolio .toggle-menu li:not( :nth-child(4), :last-child) {
+        margin-bottom: 10px;
+    }
+
+}
+
+.portfolio .portfolio-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolio .portfolio-content .box {
+    position: relative;
+    flex-basis: 25%;
+    overflow: hidden;
+}
+
+@media (max-width : 991px) {
+    .portfolio .portfolio-content .box {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width : 767px) {
+    .portfolio .portfolio-content .box {
+        flex-basis: 100%;
+    }
+}
+
+.portfolio .portfolio-content .box img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease 0s;
+}
+
+.portfolio .portfolio-content .box:hover img {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.portfolio .portfolio-content .box .box-text {
+    background-color: white;
+    position: absolute;
+    bottom: -86px;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    transition: all 0.5s ease 0s;
+}
+
+.portfolio .portfolio-content .box:hover .box-text {
+    bottom: 0px;
+}
+
+.portfolio .portfolio-content .box .box-text h2 {
+    font-weight: var(--main-Font-Weight);
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.portfolio .portfolio-content .box .box-text p {
+    color: var(--main-color);
+}
+
+.portfolio button {
+    display: block;
+    margin: 30px auto 0;
+    padding: 10px 40px;
+    font-weight: var(--main-Font-Weight);
+    color: white;
+    border: none;
+    background-color: var(--main-color);
+    text-transform: uppercase;
+}
+
+/* End Portfolio */
+
+/* Start Video */
+
+.video {
+    position: relative;
+}
+
+.video::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 /50%);
+    height: 100%;
+    width: 100%;
+}
+
+.video video {
+    width: 100%;
+}
+
+.video .video-text {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translatey(-50%);
+    background-color: var(--secondary-color);
+    width: 100%;
+    text-align: center;
+    padding: 60px 0;
+    color: white;
+}
+
+.video .video-text h2 {
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    font-weight: var(--main-Font-Weight);
+}
+
+.video .video-text p {
+    margin-bottom: 50px;
+}
+
+.video .video-text button {
+    border: none;
+    color: inherit;
+    background-color: black;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* End Video */
